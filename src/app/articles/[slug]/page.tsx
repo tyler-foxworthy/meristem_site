@@ -70,29 +70,47 @@ export default async function Article({ params }: { params: { slug: string } }) 
 
   return (
     <Layout>
-      <article className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="max-w-3xl mx-auto">
-          <header className="mb-8">
-            <h1 className="text-3xl font-bold text-primary mb-2">{article.title}</h1>
-            <time className="text-gray-500">
-              {new Date(article.date).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              })}
-            </time>
-          </header>
-
-          <div className="prose max-w-none">
-            <ReactMarkdown
-              remarkPlugins={[remarkMath]}
-              rehypePlugins={[rehypeKatex]}
-            >
-              {article.content}
-            </ReactMarkdown>
+      <div className="relative">
+        {/* Hero section with gradient background */}
+        <div className="relative bg-gradient-to-b from-neutral to-white py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto text-center">
+              <h1 className="text-4xl sm:text-5xl font-bold text-primary mb-4 leading-tight">
+                {article.title}
+              </h1>
+              <time className="text-gray-600 font-medium">
+                {new Date(article.date).toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </time>
+            </div>
           </div>
         </div>
-      </article>
+
+        {/* Article content */}
+        <article className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="max-w-3xl mx-auto">
+            <div className="prose prose-lg max-w-none">
+              <ReactMarkdown
+                remarkPlugins={[remarkMath]}
+                rehypePlugins={[rehypeKatex]}
+                className="space-y-6"
+                components={{
+                  h1: ({node, ...props}) => <h1 className="text-3xl font-bold text-primary mb-6" {...props} />,
+                  h2: ({node, ...props}) => <h2 className="text-2xl font-semibold text-primary-dark mt-12 mb-6" {...props} />,
+                  p: ({node, ...props}) => <p className="text-gray-700 leading-relaxed mb-6" {...props} />,
+                  ul: ({node, ...props}) => <ul className="list-disc list-inside space-y-2 mb-6" {...props} />,
+                  li: ({node, ...props}) => <li className="text-gray-700" {...props} />,
+                }}
+              >
+                {article.content}
+              </ReactMarkdown>
+            </div>
+          </div>
+        </article>
+      </div>
     </Layout>
   )
 } 
