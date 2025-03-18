@@ -2,36 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 26, 26, 26;
-  --background-rgb: 255, 255, 255;
-}
-
 @layer base {
   html {
-    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
-    color: rgb(var(--foreground-rgb));
-    background: rgb(var(--background-rgb));
-    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+    @apply text-mineshaft-900;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  h1 {
+    @apply text-display;
+  }
+
+  h2 {
+    @apply text-headline;
+  }
+
+  h3 {
+    @apply text-title;
+  }
+
+  p {
+    @apply text-mineshaft-600;
   }
 }
 
 @layer components {
-  .transition-transform {
-    transition-property: transform;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm transition-colors duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-brand-600 text-white hover:bg-brand-700;
+  }
+
+  .btn-secondary {
+    @apply bg-mineshaft-100 text-mineshaft-900 hover:bg-mineshaft-200;
+  }
+
+  .link {
+    @apply text-brand-600 hover:text-brand-700 transition-colors duration-200;
   }
 }
 
-/* Custom styles for math formulas */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Math formula styles */
 .katex-display {
-  @apply my-8 px-4 py-6 bg-neutral/30 rounded-lg overflow-x-auto;
+  @apply my-8 px-4 py-6 bg-brand-50 rounded-lg overflow-x-auto;
 }
 
 .katex {
-  @apply text-primary-dark;
+  @apply text-mineshaft-900;
 }
