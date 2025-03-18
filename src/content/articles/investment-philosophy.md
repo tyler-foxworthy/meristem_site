@@ -61,3 +61,7 @@ By focusing on high-quality investments with strong fundamentals, we aim to capt
 4. **Communication**: Regular updates and transparent reporting
 
 Remember: Past performance is not indicative of future results. Investment involves risk, including the possible loss of principal. 
+
+<p className="text-mineshaft-600 text-sm">
+  © {currentYear} Meristem Capital LLC. All rights reserved.
+</p> 

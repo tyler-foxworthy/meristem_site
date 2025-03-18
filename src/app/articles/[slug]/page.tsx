@@ -1,8 +1,8 @@
 import ReactMarkdown from 'react-markdown'
-import Layout from '@/components/Layout'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import 'katex/dist/katex.min.css'
+import Link from 'next/link'
 
 // This will be replaced with actual data loading from markdown files
 const SAMPLE_ARTICLES = [
@@ -51,6 +51,29 @@ $$
 
 Where $\\mu$ is the mean return and $n$ is the number of observations.
     `
+  },
+  {
+    slug: 'volatility-and-long-term-returns',
+    title: 'Volatility and Long-Term Returns',
+    date: '2024-03-15',
+    content: `
+# Volatility and Long-Term Returns
+
+How the "volatility tax" affects compounding and why minimizing drawdowns is crucial for wealth preservation and growth.
+
+When considering the impact of volatility on returns, we can express the relationship as:
+
+$$
+CAGR \\approx \\mu - \\frac{\\sigma^2}{2}
+$$
+
+Where:
+- $CAGR$ is the compound annual growth rate
+- $\\mu$ is the average return
+- $\\sigma$ is the volatility
+
+This demonstrates why minimizing volatility leads to better long-term compounding even with the same average return.
+    `
   }
 ]
 
@@ -69,48 +92,40 @@ export default async function Article({ params }: { params: { slug: string } }) 
   const article = await getArticleContent(params.slug)
 
   return (
-    <Layout>
-      <div className="relative">
-        {/* Hero section with gradient background */}
-        <div className="relative bg-gradient-to-b from-neutral to-white py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl sm:text-5xl font-bold text-primary mb-4 leading-tight">
-                {article.title}
-              </h1>
-              <time className="text-gray-600 font-medium">
-                {new Date(article.date).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                })}
-              </time>
-            </div>
-          </div>
+    <main className="container py-16">
+      <div className="max-w-2xl">
+        <div className="mb-12">
+          <Link href="/articles" className="text-brand-700 hover:text-brand-800">
+            ← Back to articles
+          </Link>
         </div>
+        
+        <h1 className="text-brand-800 mb-2">{article.title}</h1>
+        
+        <time className="text-sm text-gray-500 block mb-12">
+          {new Date(article.date).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}
+        </time>
 
-        {/* Article content */}
-        <article className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="max-w-3xl mx-auto">
-            <div className="prose prose-lg max-w-none">
-              <ReactMarkdown
-                remarkPlugins={[remarkMath]}
-                rehypePlugins={[rehypeKatex]}
-                className="space-y-6"
-                components={{
-                  h1: ({node, ...props}) => <h1 className="text-3xl font-bold text-primary mb-6" {...props} />,
-                  h2: ({node, ...props}) => <h2 className="text-2xl font-semibold text-primary-dark mt-12 mb-6" {...props} />,
-                  p: ({node, ...props}) => <p className="text-gray-700 leading-relaxed mb-6" {...props} />,
-                  ul: ({node, ...props}) => <ul className="list-disc list-inside space-y-2 mb-6" {...props} />,
-                  li: ({node, ...props}) => <li className="text-gray-700" {...props} />,
-                }}
-              >
-                {article.content}
-              </ReactMarkdown>
-            </div>
-          </div>
+        <article className="prose prose-sm max-w-none">
+          <ReactMarkdown
+            remarkPlugins={[remarkMath]}
+            rehypePlugins={[rehypeKatex]}
+            components={{
+              h1: () => null, // Skip the first h1 as we already have the title
+              h2: ({node, ...props}) => <h2 className="text-brand-800 mt-8 mb-4 text-xl" {...props} />,
+              p: ({node, ...props}) => <p className="text-gray-600 mb-4" {...props} />,
+              ul: ({node, ...props}) => <ul className="text-gray-600 list-disc pl-6 mb-4 space-y-1" {...props} />,
+              li: ({node, ...props}) => <li {...props} />,
+            }}
+          >
+            {article.content}
+          </ReactMarkdown>
         </article>
       </div>
-    </Layout>
+    </main>
   )
 } 

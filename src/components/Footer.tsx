@@ -2,94 +2,18 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-white mt-32">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-x-8 gap-y-12">
-          <div className="space-y-8">
-            <div>
-              <h2 className="text-gray-900 font-semibold mb-4">Company</h2>
-              <nav className="flex flex-col space-y-3">
-                <a href="/about" className="text-gray-600 hover:text-gray-900 transition-colors">
-                  About
-                </a>
-                <a href="/team" className="text-gray-600 hover:text-gray-900 transition-colors">
-                  Our Team
-                </a>
-                <a href="/philosophy" className="text-gray-600 hover:text-gray-900 transition-colors">
-                  Investment Philosophy
-                </a>
-              </nav>
-            </div>
-          </div>
-
-          <div className="space-y-8">
-            <div>
-              <h2 className="text-gray-900 font-semibold mb-4">Insights</h2>
-              <nav className="flex flex-col space-y-3">
-                <a href="/articles" className="text-gray-600 hover:text-gray-900 transition-colors">
-                  Articles
-                </a>
-                <a href="/market-analysis" className="text-gray-600 hover:text-gray-900 transition-colors">
-                  Market Analysis
-                </a>
-                <a href="/research" className="text-gray-600 hover:text-gray-900 transition-colors">
-                  Research
-                </a>
-              </nav>
-            </div>
-          </div>
-
-          <div className="space-y-8">
-            <div>
-              <h2 className="text-gray-900 font-semibold mb-4">Legal</h2>
-              <nav className="flex flex-col space-y-3">
-                <a href="/privacy" className="text-gray-600 hover:text-gray-900 transition-colors">
-                  Privacy Policy
-                </a>
-                <a href="/disclaimer" className="text-gray-600 hover:text-gray-900 transition-colors">
-                  Disclaimer
-                </a>
-                <a href="/terms" className="text-gray-600 hover:text-gray-900 transition-colors">
-                  Terms of Service
-                </a>
-              </nav>
-            </div>
-          </div>
-
-          <div className="md:col-span-2 space-y-8">
-            <div>
-              <h2 className="text-gray-900 font-semibold mb-4">Investment Updates</h2>
-              <p className="text-gray-600 mb-6">
-                Subscribe to receive our latest market insights and investment perspectives.
-              </p>
-              <div className="flex gap-x-4">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-                />
-                <button className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
-                  Subscribe
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-16 pt-8 border-t border-gray-200">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-600 text-sm">
-              © {currentYear} Meristem Capital LLC. All rights reserved.
-            </p>
-            <div className="flex items-center space-x-6">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900">
-                LinkedIn
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900">
-                Twitter
-              </a>
-            </div>
-          </div>
+    <footer className="border-t border-gray-200 bg-white">
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        <div className="flex flex-col items-center space-y-4">
+          <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+            <a href="/about" className="text-sm text-gray-600 hover:text-gray-900">About</a>
+            <a href="/articles" className="text-sm text-gray-600 hover:text-gray-900">Articles</a>
+            <a href="/compliance" className="text-sm text-gray-600 hover:text-gray-900">Compliance</a>
+            <a href="/legal" className="text-sm text-gray-600 hover:text-gray-900">Legal</a>
+          </nav>
+          <p className="text-sm text-gray-600">
+            © {currentYear} Meristem Capital LLC. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

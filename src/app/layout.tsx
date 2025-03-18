@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import 'katex/dist/katex.min.css';
+import TopNav from "@/components/TopNav";
 import Footer from "@/components/Footer";
 
 const inter = Inter({
@@ -22,8 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className={`${inter.className} antialiased bg-neutral-50 text-neutral-900 flex flex-col min-h-screen`}>
-        <main className="flex-grow">
+      <body className={`${inter.className} antialiased bg-white text-gray-900 flex flex-col min-h-screen`}>
+        <TopNav />
+        <main className="flex-grow pt-24">
           {children}
         </main>
         <Footer />
