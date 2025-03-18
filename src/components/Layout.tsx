@@ -39,8 +39,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div>
               <h3 className="text-lg font-semibold mb-4">Meristem Capital</h3>
               <p className="text-sm text-gray-300">
-                Registered Investment Advisor<br />
-                State of Indiana
+                123 Financial District<br />
+                Suite 400<br />
+                Indianapolis, IN 46204
               </p>
             </div>
             <div>

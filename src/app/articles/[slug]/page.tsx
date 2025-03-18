@@ -17,11 +17,21 @@ At Meristem Capital, we believe in a systematic, research-driven approach to inv
 
 The power of compound interest can be expressed as:
 
-\\[
-A = P(1 + r)^n
-\\]
+$A = P(1 + r)^n$
 
-Where \\(A\\) is the final amount and \\(P\\) is the principal investment.
+Where:
+- $A$ is the final amount
+- $P$ is the principal investment
+- $r$ is the annual interest rate
+- $n$ is the number of years
+
+For example, with a 7% annual return, $1,000 becomes approximately $1,967 after 10 years:
+
+$$
+1000 * (1 + 0.07)^{10} = 1967.15
+$$
+
+This demonstrates the power of compound growth over time.
     `
   },
   {
@@ -32,6 +42,14 @@ Where \\(A\\) is the final amount and \\(P\\) is the principal investment.
 # 2024 Market Outlook
 
 Our analysis of current market conditions and future opportunities.
+
+The current market volatility ($\\sigma$) can be expressed as:
+
+$$
+\\sigma = \\sqrt{\\frac{\\sum(x - \\mu)^2}{n}}
+$$
+
+Where $\\mu$ is the mean return and $n$ is the number of observations.
     `
   }
 ]
