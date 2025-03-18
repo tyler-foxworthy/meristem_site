@@ -1,13 +1,13 @@
-import { MDXRemote } from 'next-mdx-remote/rsc'
+import ReactMarkdown from 'react-markdown'
 import Layout from '@/components/Layout'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import 'katex/dist/katex.min.css'
 
 // This will be replaced with actual data loading from markdown files
-const getArticleContent = async (slug: string) => {
-  // For now, return sample content
-  return {
+const SAMPLE_ARTICLES = [
+  {
+    slug: 'investment-philosophy',
     title: 'Our Investment Philosophy',
     date: '2024-03-18',
     content: `
@@ -23,7 +23,28 @@ A = P(1 + r)^n
 
 Where \\(A\\) is the final amount and \\(P\\) is the principal investment.
     `
+  },
+  {
+    slug: 'market-outlook-2024',
+    title: '2024 Market Outlook',
+    date: '2024-03-17',
+    content: `
+# 2024 Market Outlook
+
+Our analysis of current market conditions and future opportunities.
+    `
   }
+]
+
+// This function is required for static site generation with dynamic routes
+export function generateStaticParams() {
+  return SAMPLE_ARTICLES.map((article) => ({
+    slug: article.slug,
+  }))
+}
+
+const getArticleContent = async (slug: string) => {
+  return SAMPLE_ARTICLES.find(article => article.slug === slug) || SAMPLE_ARTICLES[0]
 }
 
 export default async function Article({ params }: { params: { slug: string } }) {
@@ -45,15 +66,12 @@ export default async function Article({ params }: { params: { slug: string } }) 
           </header>
 
           <div className="prose max-w-none">
-            <MDXRemote
-              source={article.content}
-              options={{
-                mdxOptions: {
-                  remarkPlugins: [remarkMath],
-                  rehypePlugins: [rehypeKatex],
-                },
-              }}
-            />
+            <ReactMarkdown
+              remarkPlugins={[remarkMath]}
+              rehypePlugins={[rehypeKatex]}
+            >
+              {article.content}
+            </ReactMarkdown>
           </div>
         </div>
       </article>
