@@ -2,21 +2,18 @@ export default function Home() {
   return (
     <main className="container py-16">
       <div className="max-w-2xl">
-        <h1 className="text-brand-800">
+        <h1 className="text-brand-800 mb-12">
           Meristem Capital
         </h1>
-        <p className="text-lg mb-8">
-          Meristem Capital is an investment management firm that applies quantitative methods and value investing principles to identify exceptional businesses with strong compounding potential at attractive prices.
-        </p>
-        <p className="text-gray-600 mb-6">
-          By combining proven value investment principles with advanced technology, we seek superior returns while working to safeguard against permanent capital loss. We focus on acquiring ownership stakes in quality businesses with strong fundamentals when they are fairly valued or undervalued.
-        </p>
-        <p className="text-gray-600 mb-8">
-          Our approach leverages artificial intelligence and statistical algorithms to analyze market dynamics and company fundamentals, enabling us to maintain a concentrated portfolio of businesses with enduring competitive advantages positioned for long-term growth.
-        </p>
-        <div className="border-t border-gray-200 pt-8 mt-12">
-          <p className="text-gray-600">
-            We serve accredited and qualified clients, including high net worth individuals, family offices, and foundations.
+        <div className="space-y-8">
+          <p className="text-lg leading-relaxed">
+            Meristem Capital is an investment management firm that employs rigorous quantitative methods grounded in timeless value-investing principles. Rather than chasing short-term trends or passively tracking indices, we systematically identify exceptional businesses priced below their intrinsic value—combining AI-driven insights from vast amounts of unstructured data with fundamental analysis and advanced statistical modeling.
+          </p>
+          <p className="text-lg leading-relaxed">
+            We believe enduring wealth comes from disciplined, patient ownership of high-quality businesses. Our sophisticated, multi-disciplinary process emphasizes precise valuations, strategic risk management, and careful position sizing—recognizing that portfolio exposures are as critical as asset selection.
+          </p>
+          <p className="text-lg leading-relaxed">
+            We serve accredited and qualified clients, including high-net-worth individuals, family offices, and foundations, helping them maximize long-term compounding while thoughtfully managing risk and protecting their capital through periods of uncertainty.
           </p>
         </div>
       </div>
