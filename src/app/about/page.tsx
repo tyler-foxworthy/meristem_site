@@ -2,59 +2,29 @@ export default function About() {
   return (
     <main className="container py-16">
       <div className="max-w-2xl">
-        <h1 className="text-brand-800">About Our Approach</h1>
+        <h1 className="text-brand-800 mb-12">About</h1>
         
-        <section className="mb-12">
-          <p className="text-lg mb-8">
-            "In the short run, the market is a voting machine, but in the long run, it is a weighing machine." 
-            — Warren Buffett
+        <div className="space-y-8">
+          <p className="text-lg leading-relaxed">
+            Meristem Capital, based in Zionsville, Indiana, was founded by <a href="https://www.linkedin.com/in/tyler-foxworthy/" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:text-brand-700">Tyler Foxworthy</a> in 2024 following a career dedicated to using mathematics and statistics to help businesses uncover inefficiencies, forecast outcomes, and optimize performance—initially as a data scientist, then as an entrepreneur and investor.
           </p>
-          <p className="text-gray-600 mb-6">
-            All true investing is value investing—everything else is speculation. We focus on companies with strong fundamentals and growth potential, preferring a great business at a fair price rather than a mediocre business at a great price.
-          </p>
-        </section>
 
-        <section className="mb-12">
-          <h2 className="text-brand-800">Understanding the Present, Not Predicting the Future</h2>
-          <p className="text-gray-600 mb-6">
-            We utilize AI and advanced statistical algorithms to analyze real-time market data, focusing on measuring the present rather than trying to predict the future. By identifying deviations in market structure and dynamics, we better understand when to take specific actions to minimize risk while maximizing long-term rewards.
+          <p className="text-lg leading-relaxed">
+            A graduate of Purdue University with a degree in applied mathematics, Tyler has held leadership roles across software, biotechnology, management consulting, and private equity. He is an expert in developing advanced quantitative models and algorithms for data mining, network analysis, risk management, and predictive modeling, and he holds multiple patents for innovations in these areas.
           </p>
-        </section>
 
-        <section className="mb-12">
-          <h2 className="text-brand-800">Protecting Against Downside Risks</h2>
-          <p className="text-gray-600 mb-6">
-            Large losses have the most significant impact on long-term compounding—the "volatility tax"—and our focus is on minimizing those drawdowns to preserve capital and enhance wealth accumulation. Our systematic, model-based risk assessments allow us to proactively adjust the portfolio when appropriate.
+          <p className="text-lg leading-relaxed">
+            In 2021, Tyler successfully exited his previous venture, Vertex Intelligence, an AI software consultancy. His deep quantitative expertise and nuanced understanding of what drives business performance form the foundation of Meristem's disciplined and systematic approach to investing.
           </p>
-        </section>
 
-        <section className="mb-12">
-          <h2 className="text-brand-800">Long-Term Growth and Compounding</h2>
-          <p className="text-gray-600 mb-6">
-            The best way to maximize compounding is by not interrupting it unnecessarily. Our focus is on finding great companies and holding them long-term. We embrace simplicity over complexity, adhering to straightforward value investment principles while minimizing the impact of taxes and transaction fees from frequent trading.
+          <p className="text-lg leading-relaxed">
+            Meristem serves accredited and qualified clients, including high-net-worth individuals, family offices, and foundations, helping them maximize long-term compounding while thoughtfully managing risk and protecting their capital through periods of uncertainty. We offer access to model portfolios and separately managed accounts, focusing exclusively on long-only, long-term investments.
           </p>
-        </section>
 
-        <section>
-          <h2 className="text-brand-800">Fee Structure</h2>
-          <p className="text-gray-600 mb-6">
-            We align our interests with our clients through a performance-based fee structure:
+          <p className="text-lg leading-relaxed">
+            Our fee structure aligns our interests with those of our clients—we only earn fees when we outperform the S&P 500 index. With no management fees, a high-water mark provision, and liquid accounts with no lock-up periods, we provide a transparent and investor-friendly approach designed to compound wealth over time.
           </p>
-          <ul className="text-gray-600 mb-6 space-y-2">
-            <li>• No management fees</li>
-            <li>• Performance fee of 15% on returns above the S&P 500 benchmark</li>
-            <li>• High-water mark protection</li>
-            <li>• Transparent, liquid accounts with Interactive Brokers</li>
-            <li>• No lock-up periods</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-brand-800">Account Requirements</h2>
-          <p className="text-gray-600">
-            Minimum account size: $100,000
-          </p>
-        </section>
+        </div>
       </div>
     </main>
   )
