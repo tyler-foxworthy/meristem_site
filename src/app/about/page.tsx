@@ -34,7 +34,7 @@ export default function About() {
               >
                 Reach out to us
               </a>
-              {' '} to start a conversation.
+              {' '} at info@meristemcapital.com to start a conversation.
             </p>
           </div>
         </div>
