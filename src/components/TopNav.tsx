@@ -20,10 +20,10 @@ export default function TopNav() {
             About
           </Link>
           <Link 
-            href="/articles" 
-            className={pathname === '/articles' ? 'text-brand-800' : 'text-gray-500 hover:text-brand-700'}
+            href="/essays" 
+            className={pathname === '/essays' ? 'text-brand-800' : 'text-gray-500 hover:text-brand-700'}
           >
-            Articles
+            Essays
           </Link>
         </div>
       </div>
