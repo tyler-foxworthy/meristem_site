@@ -1,6 +1,6 @@
 export default function Compliance() {
   return (
-    <main className="container py-16">
+    <div className="container py-16">
       <div className="max-w-3xl">
         <h1 className="text-brand-800 mb-12">Compliance & Disclosures</h1>
         
@@ -93,6 +93,6 @@ export default function Compliance() {
           </section>
         </div>
       </div>
-    </main>
+    </div>
   )
 } 
