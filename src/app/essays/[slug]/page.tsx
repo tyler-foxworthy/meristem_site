@@ -124,6 +124,12 @@ export default async function Essay({ params }: { params: { slug: string } }) {
           >
             {article.content}
           </ReactMarkdown>
+          
+          <div className="mt-16 pt-8 border-t border-gray-200">
+            <p className="text-sm text-gray-500 italic">
+              Disclaimer: The views and opinions expressed in this essay are those of the author and are provided for informational and educational purposes only. They do not constitute financial, investment, tax, or legal advice, and should not be relied upon as such. Before making any financial decisions, please consult with a qualified professional. Past performance is not indicative of future results. Meristem Capital disclaims any liability for any losses or damages that may arise from the use of this information.
+            </p>
+          </div>
         </article>
       </div>
     </main>
