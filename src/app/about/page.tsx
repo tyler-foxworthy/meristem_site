@@ -24,6 +24,19 @@ export default function About() {
           <p className="text-lg leading-relaxed">
             Our fee structure aligns our interests with those of our clients—we only earn fees when we outperform the S&P 500 index. With no management fees, a high-water mark provision, and liquid accounts with no lock-up periods, we provide a transparent and investor-friendly approach designed to compound wealth over time.
           </p>
+
+          <div className="mt-16 pt-8 border-t border-gray-200">
+            <p className="text-lg text-gray-600">
+              Interested in learning more about our investment approach? {' '}
+              <a 
+                href="mailto:info@meristemcapital.com" 
+                className="text-brand-600 hover:text-brand-700"
+              >
+                Reach out to us
+              </a>
+              {' '} to start a conversation.
+            </p>
+          </div>
         </div>
       </div>
     </main>
